@@ -1,0 +1,59 @@
+/* styles.css — минимальные стили и адаптивность */
+/* Сброс */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { height: 100%; }
+body { font-family: Arial, Helvetica, sans-serif; line-height: 1.45; color: #222; background: #fafafa; }
+
+/* Контейнер */
+.container { max-width: 1000px; margin: 0 auto; padding: 20px; }
+
+/* Ссылка для пропуска навигации (доступность) */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+.skip-link:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  padding: 8px;
+  background: #000;
+  color: #fff;
+  z-index: 1000;
+}
+
+/* Header */
+header { background: #fff; border-bottom: 1px solid #e6e6e6; }
+.header-inner { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 8px 0; }
+.brand h1 { font-size: 1.6rem; }
+.lead { color: #666; font-size: 0.95rem; }
+
+/* Навигация */
+.nav-list { list-style: none; display: flex; gap: 10px; }
+.nav-list a { text-decoration: none; padding: 6px 10px; border-radius: 6px; color: #0366d6; }
+.nav-list a:hover, .nav-list a:focus { background: rgba(3,102,214,0.08); outline: none; }
+
+/* Макет main + aside */
+main { display: grid; grid-template-columns: 1fr 300px; gap: 20px; align-items: start; margin-top: 20px; }
+.card { background: #fff; padding: 16px; border-radius: 8px; border: 1px solid #eee; }
+.sidebar figure { margin-bottom: 12px; }
+.sidebar img { display: block; width: 100%; height: auto; border-radius: 6px; }
+
+/* Типография */
+h1 { margin-bottom: 4px; }
+h2 { font-size: 1.25rem; margin-bottom: 8px; }
+h3 { font-size: 1.05rem; margin-bottom: 6px; color: #333; }
+
+/* Footer */
+footer { margin-top: 24px; padding: 12px 0; text-align: center; font-size: 0.9rem; color: #666; }
+
+/* Адаптивность */
+@media (max-width: 780px) {
+  .header-inner { flex-direction: column; align-items: flex-start; gap: 12px; }
+  main { grid-template-columns: 1fr; }
+  .nav-list { flex-wrap: wrap; gap: 6px; }
+}
